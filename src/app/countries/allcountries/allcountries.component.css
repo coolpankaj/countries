@@ -1,0 +1,11 @@
+*{
+  background-color: #2C3E50;
+}
+.back {
+  transition: all 0.3s ease-in-out 0s;
+}
+.back :hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+  transition: all 0.3s ease-in-out 0s;
+}
