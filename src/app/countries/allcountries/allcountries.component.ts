@@ -18,6 +18,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AllcountriesComponent implements OnInit {
   public data;
+  public countryname: string;
+  public selectedRegion: string;
   // tslint:disable-next-line:max-line-length
   constructor(public _route: ActivatedRoute, public router: Router, public countryservice: CountryService, private location: Location, public spinner: NgxSpinnerService) { }
 
@@ -25,7 +27,7 @@ export class AllcountriesComponent implements OnInit {
     this.spinner.show();
     const countryname = this._route.snapshot.paramMap.get('name');
     console.log(countryname);
-
+    this.selectedRegion = countryname;
     this.countryservice.getRegionDetails(countryname).subscribe(
       data => {
         this.data = data;

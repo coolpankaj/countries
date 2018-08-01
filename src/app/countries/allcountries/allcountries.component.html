@@ -7,12 +7,14 @@
           <img  src='../../../assets/images/leftarrow.png' alt="back-button" height="30px" width="30px;" (click) = "goback()">
        </div>
         <br><br>
-        <p class="text-white font-weight-bold text-monospace">Click on language/currency to filter</p>
+        <p class="col-md-12 text-white font-weight-bold text-monospace">Click on language/currency to filter</p>
       </div>
+      <div class="col-md-12" *ngIf = "selectedRegion"><p class="text text-center font-weight-bold text-center text-monospace text-white" style="font-size: 20px;">Region {{selectedRegion}}</p></div>
     </div>
 
 <div class="col-md-12">
   <div class="row" *ngIf="data">
+
     <div class="col-md-3 col-sm-6" *ngFor="let current of data" style="padding-bottom: 25px;overflow: hidden;">
         <div>
             <div class="col-md-12 col-sm-12 card text-center" style="width: 18rem;background-color: #8A8A9E;">
@@ -23,7 +25,7 @@
 
                   <p class="card-text text-truncate" *ngIf="current.languages.length !== undefined && current.languages.length > 0">
                     <b>Languages: </b>
-                    <a  *ngFor="let language of current.languages; let first=first; let last=last">{{language.name}}{{last? '':', '}}</a>
+                    <a  *ngFor="let language of current.languages; let first=first; let last=last" (click) = "clickLanguage()">{{language.name}}{{last? '':', '}}</a>
                   </p>
 
                   <p class="card-text text-truncate" *ngIf="current.currencies.length !== undefined && current.currencies.length > 0">
