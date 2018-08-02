@@ -47,15 +47,20 @@
               </p>
       </div><br><br>
 
-        <div *ngFor = "let current of regions">
-          <div class="card text-center" style="width: 18rem;float: left;margin-left: 100px;">
-              <img class="card-img-top" src="{{current.img}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-center"><b>{{current.name}}</b></h5>
-                <p class="card-text text-center">Number Of Countries: {{current.numberofcountries}}</p>
-                <a [routerLink]="['countryview', current.name]" class="btn btn-primary">Countries</a>
-              </div>
+        <div class="col-md-12">
+         <div class="row">
+         <div class="col-md-4" *ngFor = "let current of regions" style="padding-bottom: 30px !important;">
+          <div class="card text-center mx-auto d-block"  style="width: 18rem;">
+            <img class="card-img-top" style="height: 150px !important;" src="{{current.img}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title text-center"><b>{{current.name}}</b></h5>
+              <p class="card-text text-center">Number Of Countries: {{current.numberofcountries}}</p>
+              <a [routerLink]="['countryview', current.name]" class="btn btn-primary">Countries</a>
             </div>
+          
+         </div>
+         </div>
+         </div>
       </div>
 
 

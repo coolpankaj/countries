@@ -31,4 +31,10 @@ export class CountryService {
     console.log(response);
     return response;
   }
+
+  public getLanguageDetails(): Observable<any> {
+    const response = this._http.get(`${this.baseUrl}all?fields=name;capital;flag;languages;currencies`);
+    console.log(response);
+    return response;
+  }
 }

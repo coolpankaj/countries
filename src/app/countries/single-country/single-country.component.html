@@ -10,8 +10,8 @@
     </div>
   </div>
 
-        <div *ngIf = "data">
-            <div class="row" *ngFor = "let current of data">
+        <div *ngIf = "data" class="text-truncate">
+            <div class="row" *ngFor = "let current of data" style="padding-bottom: 50px !important;">
                 <div class="col-md-4 offset-md-4 text-center" style="padding-bottom: 40px;">
                   <img class="img-fluid" src="{{current.flag}}" alt="country-flag" id = "flag">
                 </div>
@@ -54,9 +54,7 @@
                     </div>
                  </div>
 
-              </div>
-              <br><br>
-              <div class="row" *ngFor = "let current of data">
+             
                 <div class="col-md-10 offset-md-1">
                   <div class="row">
                       <div class="col-md-3 mybox col-sm-12" *ngIf="current.population">
@@ -105,10 +103,8 @@
 
 
                 </div>
-              </div><br><br>
-
-              <div class="row" *ngFor = "let current of data">
-                <div class="col-md-10 col-sm-10 offset-md-1 offset-sm-1">
+             
+                <div class="col-md-10 col-sm-10 offset-md-1 offset-sm-1 text-truncate">
                   <div class="row">
                     <div class="col-md-10 offset-md-1 text-white text-center text-monospace font-weight-bold rounded-top border" >
                       <span style="font-size: 20px;">Other Details</span>
@@ -138,8 +134,7 @@
                   </div>
                 </div>
               </div>
-
-
+              
         </div>
-<br><br>
+
 </div>

@@ -8,6 +8,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/toPromise';
 import { Location } from '@angular/common';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Allcountrydata } from './allcountries-interface';
 
 
 
@@ -17,9 +18,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./allcountries.component.css']
 })
 export class AllcountriesComponent implements OnInit {
-  public data;
+  public data: any = [];
   public countryname: string;
   public selectedRegion: string;
+  public selectedData: any = [];
+  public filtervalue: any;
   // tslint:disable-next-line:max-line-length
   constructor(public _route: ActivatedRoute, public router: Router, public countryservice: CountryService, private location: Location, public spinner: NgxSpinnerService) { }
 
@@ -40,6 +43,7 @@ export class AllcountriesComponent implements OnInit {
     );
 
   }
+
   public goback = () => {
     this.location.back();
   }
